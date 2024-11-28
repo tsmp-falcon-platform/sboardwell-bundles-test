@@ -13,5 +13,19 @@
 touch bundles/controller-bundles/controller-a/bundle.yaml
 vi bundle-profiles.yaml
 
+# you should have something like this
+❯ tree
+.
+├── bundle-profiles.yaml
+├── bundles
+│   └── controller-bundles
+│       ├── controller-a
+│       │   └── bundle.yaml
+│       └── Makefile
+├── Makefile
+├── README.md
+└── transformations
+    ├── controllers-common.yaml
+    └── remove-dynamic-stuff.yaml
 
 ```
