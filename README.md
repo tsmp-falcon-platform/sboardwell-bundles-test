@@ -28,4 +28,18 @@ vi bundle-profiles.yaml
     ├── controllers-common.yaml
     └── remove-dynamic-stuff.yaml
 
+# Variables needed for docker
+
+# create an API token at OC level
+export BUNDLEUTILS_USERNAME=<your-user> # reminder we can use a service user with fine grained permissions later in prod
+export BUNDLEUTILS_PASSWORD=<your-token> #  # reminder we can use a service user with fine grained permissions later in prod
+
+# the single user wildcard license
+export CASC_VALIDATION_LICENSE_KEY_B64=$(cat license.key | base64 -w0)
+export CASC_VALIDATION_LICENSE_CERT_B64=$(cat license.cert | base64 -w0)
+
+# the full path to your bundle. e.g.
+BUNDLES_WORKSPACE=/home/user/Workspace/tsmp-falcon-platform/sboardwell-bundles-test
+
+# now follow instructions 
 ```
