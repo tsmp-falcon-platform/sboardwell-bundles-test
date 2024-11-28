@@ -8,7 +8,9 @@
 ❯ cp -r ../ci-bundle-utils/examples/example-bundles-repo/bundle-profiles.yaml .
 ❯ cp -r ../ci-bundle-utils/examples/example-bundles-repo/transformations .
 ❯ cp -r ../ci-bundle-utils/examples/example-bundles-repo/Makefile .
+```
 
+```sh
 # add a profile and empty bundle.yaml
 touch bundles/controller-bundles/controller-a/bundle.yaml
 vi bundle-profiles.yaml
@@ -27,21 +29,30 @@ vi bundle-profiles.yaml
 └── transformations
     ├── controllers-common.yaml
     └── remove-dynamic-stuff.yaml
+```
 
-# Variables needed for docker
-# taken from https://github.com/tsmp-falcon-platform/ci-bundle-utils/blob/5ba24fbf1871509ad94c2038ba4f8eea2d9981ad/docs/use-case-fetching-and-transforming.md#setup
+## Variables needed for docker
 
-# create an API token at OC level
+Taken from https://github.com/tsmp-falcon-platform/ci-bundle-utils/blob/5ba24fbf1871509ad94c2038ba4f8eea2d9981ad/docs/use-case-fetching-and-transforming.md#setup
+
+### create an API token at OC level
+
+```sh
 export BUNDLEUTILS_USERNAME=<your-user> # reminder we can use a service user with fine grained permissions later in prod
 export BUNDLEUTILS_PASSWORD=<your-token> #  # reminder we can use a service user with fine grained permissions later in prod
+```
 
-# the single user wildcard license
+### the single user wildcard license
+
+```sh
 export CASC_VALIDATION_LICENSE_KEY_B64=$(cat license.key | base64 -w0)
 export CASC_VALIDATION_LICENSE_CERT_B64=$(cat license.cert | base64 -w0)
 
 # the full path to your bundle. e.g.
 BUNDLES_WORKSPACE=/home/user/Workspace/tsmp-falcon-platform/sboardwell-bundles-test
+```
 
-# now follow instructions from
-# https://github.com/tsmp-falcon-platform/ci-bundle-utils/blob/5ba24fbf1871509ad94c2038ba4f8eea2d9981ad/docs/setup-docker.md
+
+Now follow instructions from
+https://github.com/tsmp-falcon-platform/ci-bundle-utils/blob/5ba24fbf1871509ad94c2038ba4f8eea2d9981ad/docs/setup-docker.md
 ```
