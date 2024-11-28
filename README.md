@@ -29,6 +29,7 @@ vi bundle-profiles.yaml
     └── remove-dynamic-stuff.yaml
 
 # Variables needed for docker
+# taken from https://github.com/tsmp-falcon-platform/ci-bundle-utils/blob/5ba24fbf1871509ad94c2038ba4f8eea2d9981ad/docs/use-case-fetching-and-transforming.md#setup
 
 # create an API token at OC level
 export BUNDLEUTILS_USERNAME=<your-user> # reminder we can use a service user with fine grained permissions later in prod
@@ -41,5 +42,6 @@ export CASC_VALIDATION_LICENSE_CERT_B64=$(cat license.cert | base64 -w0)
 # the full path to your bundle. e.g.
 BUNDLES_WORKSPACE=/home/user/Workspace/tsmp-falcon-platform/sboardwell-bundles-test
 
-# now follow instructions 
+# now follow instructions from
+# https://github.com/tsmp-falcon-platform/ci-bundle-utils/blob/5ba24fbf1871509ad94c2038ba4f8eea2d9981ad/docs/setup-docker.md
 ```
