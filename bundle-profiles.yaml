@@ -1,5 +1,5 @@
 profiles:
-  controller-common:
+  controller-common: &controller-common
     BUNDLEUTILS_CI_TYPE: mm
     BUNDLEUTILS_CI_VERSION: 2.452.3.2
     # These system properties are required to introduce special permissions to read and manage system configuration
